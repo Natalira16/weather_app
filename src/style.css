@@ -103,13 +103,11 @@ button:focus {
 }
 
 .card1-text {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 100;
     color: rgba(98, 97, 97, 0.8);
     margin: 0;
 }
-
-#icon img {}
 
 .card2 {
     display: flex;
@@ -138,21 +136,18 @@ button:focus {
 .unitC {
     font-size: 14px;
     font-weight: 700;
-    color: rgb(28, 100, 207);
+    color: rgba(98, 97, 97, 0.8);
 }
 
-/* .hide-temp {
+.temp-links .active {
+    color: rgb(28, 100, 207);
+    cursor: default;
+}
+
+.temp-links .active:hover,
+.temp-links .active:focus {
     text-decoration: none;
-    margin-left: -1px;
-    display: none;
 }
-
-.show-temp {
-    font-size: 36px;
-    font-weight: 700;
-    color: rgb(28, 100, 207);
-    margin: 0 5px 0 0;
-} */
 
 .unitF {
     font-size: 14px;

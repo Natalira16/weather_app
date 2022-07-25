@@ -29,6 +29,8 @@ h2.innerHTML = `${currentDay} ${hours}:${minutes}`;
 function displayWeather(response) {
     let temperature = Math.round(response.data.main.temp);
 
+    tempC = response.data.main.temp;
+
     document.querySelector("h1").innerHTML = response.data.name;
     document.querySelector("h3").innerHTML = temperature;
 
@@ -85,14 +87,13 @@ function currentCTemp(event) {
     event.preventDefault();
 
     let temperature = document.querySelector("h3");
-    let celsiusTemperature = Math.round(temperature);
+    let celsiusTemperature = Math.round(tempC);
 
     let h3 = document.querySelector("h3");
     h3.innerHTML = `${celsiusTemperature}`;
 
-    // let temp = document.querySelector("h3#temperature");
-    // temp.classList.add("hide-temp");
-    // temp.classList.remove("show-temp");
+    buttonF.classList.remove("active");
+    buttonC.classList.add("active");
 }
 
 let buttonC = document.querySelector("#celsius-btn");
@@ -104,16 +105,16 @@ function currentFTemp(event) {
     event.preventDefault();
 
     let temperature = document.querySelector("h3");
-    // let h3 = Math.round(response.data.main.temp);
-    let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32);
+    let fahrenheitTemperature = Math.round((tempC * 9) / 5 + 32);
 
     h3 = document.querySelector("h3");
     h3.innerHTML = `${fahrenheitTemperature}`;
 
-    // let temp = document.querySelector("h3#temperature2");
-    // temp.classList.add("show-temp");
-    // temp.classList.remove("hide-temp");
+    buttonC.classList.remove("active");
+    buttonF.classList.add("active");
 }
+
+let tempC = null;
 
 let buttonF = document.querySelector("#fahrenheit-btn");
 buttonF.addEventListener("click", currentFTemp);
