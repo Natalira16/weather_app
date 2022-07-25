@@ -6,8 +6,13 @@ a {
     text-decoration: none;
 }
 
-.container {
+.content {
     max-width: 580px;
+    display: block;
+    margin: 0 auto;
+}
+
+.container {
     height: 50%;
     margin: 0 auto;
     padding: 20px 30px;
@@ -207,4 +212,19 @@ button:focus {
 .carousel-item1 {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 0.25rem;
+}
+
+.open-source {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.open-source-link {
+    font-size: 12px;
+    color: rgb(28, 100, 207);
+}
+
+.open-source-link:hover,
+.open-source-link:focus {
+    text-decoration: underline;
 }
