@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p>
+                <a href="https://www.google.com/search?q=weather+kyiv" target="_blank" class="city">Kyiv</a>
+                <a href="https://www.google.com/search?q=weather+paris" target="_blank" class="city">Paris</a>
+                <a href="https://www.google.com/search?q=weather+new+york" target="_blank" class="city">New York</a>
+                <a href="https://www.google.com/search?q=weather+berlin" target="_blank" class="city">Berlin</a>
+            </p>
+        </div>
+
+        <form class="input-group" id="search-form">
+            <input type="search" autocomplete="off" autofocus="on" class="form-control" id="form-control" placeholder="Enter a city..." aria-label="Search" />
+            <button type="button" class="btn-search" id="btn-search">Search</button>
+            <button type="button" class="btn-current" id="btn-current">Current</button>
+        </form>
+
+        <div class="card-body">
+            <div class="card-right">
+                <div class="card1">
+                    <h1 class="card1-title">Kyiv</h1>
+                    <div class="card1-items">
+                        <h2 class="card1-text current-date">Monday 12:34</h2>
+                        <p class="card1-text" id="description">Cloudy</p>
+                    </div>
+                </div>
+            </div>    
+            <div class="card-left">
+                <div class="card2">
+                    <div>
+                        <img src="Images/icon1.png" alt="Weather icon">
+                    </div>
+                    <div class="card2-text">
+                        <div class="card2-title">
+                            <h3 class="text-title show-temp" id="temperature">23</h3>
+                            <!-- <h3 class="text-title hide-temp" id="temperature2"></h3> -->
+                            <div class="temp-links units">
+                                <a href="#" id="celsius-btn" class="unitC"><span><strong>°C</strong></span></a> 
+                                <span>|</span>
+                                <a href="#" id="fahrenheit-btn" class="unitF"><span>°F</span></a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <p class="text-item">Feels like: <span id="feels_like">0</span> °C</p>
+                            <p class="text-item">Humidity: <span id="humidity">43</span> %</p>
+                            <p class="text-item">Wind Speed: <span id="wind_speed">3.6</span> m/s</p>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+
+
+        <div class="carousel">
+            <div class="carousel-items">
+                <div class="carousel-item carousel-item1">
+                    <p class="item-header"><strong>Tue</strong></p>
+                    <img src="Images/icon2.png" alt="Weather icon" class="item-icon">
+                    <p class="item-footer"><strong>28°C</strong></p>
+                </div>
+                <div class="carousel-item">
+                    <p class="item-header"><strong>Wed</strong></p>
+                    <img src="Images/icon3.png" alt="Weather icon" class="item-icon">
+                    <p class="item-footer"><strong>25°C</strong></p>
+                </div>
+                <div class="carousel-item">
+                    <p class="item-header"><strong>Thu</strong></p>
+                    <img src="Images/icon4.png" alt="Weather icon" class="item-icon">
+                    <p class="item-footer"><strong>22°C</strong></p>
+                </div>
+                <div class="carousel-item">
+                    <p class="item-header"><strong>Fri</strong></p>
+                    <img src="Images/icon5.png" alt="Weather icon" class="item-icon">
+                    <p class="item-footer"><strong>26°C</strong></p>
+                </div>
+                <div class="carousel-item">
+                    <p class="item-header"><strong>Sat</strong></p>
+                    <img src="Images/icon6.png" alt="Weather icon" class="item-icon">
+                    <p class="item-footer"><strong>24°C</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="src/index.js"></script>
+</body>
+</html>
