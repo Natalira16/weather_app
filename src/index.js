@@ -40,8 +40,47 @@ function displayWeather(response) {
 
     document.querySelector("#description").innerHTML = response.data.weather[0].main;
 
-    document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon
-        }@2x.png`);
+    let iconElementAPI = response.data.weather[0].icon;
+    // document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${iconElementAPI}@2x.png`);
+
+    if (iconElementAPI === "01d") {
+        document.querySelector("#icon").setAttribute("src", `./Images/Icons/01d.svg`);
+    } else if (iconElementAPI === "02d") {
+        document.querySelector("#icon").setAttribute("src", `./Images/Icons/02d.svg`);
+    } else if (iconElementAPI === "03d") {
+        document.querySelector("#icon").setAttribute("src", `./Images/Icons/03d.svg`);
+    } else if (iconElementAPI === "04d") {
+        document.querySelector("#icon").setAttribute("src", `./Images/Icons/04d.svg`);
+    } else if (iconElementAPI === "09d") {
+        document.querySelector("#icon").setAttribute("src", `./Images/Icons/09d.svg`);
+    } else if (iconElementAPI === "10d") {
+        document.querySelector("#icon").setAttribute("src", `./Images/Icons/10d.svg`);
+    } else if (iconElementAPI === "11d") {
+        document.querySelector("#icon").setAttribute("src", `./Images/Icons/11d.svg`);
+    } else if (iconElementAPI === "13d") {
+        document.querySelector("#icon").setAttribute("src", `./Images/Icons/13d.svg`);
+    } else if (iconElementAPI === "50d") {
+        document.querySelector("#icon").setAttribute("src", `./Images/Icons/50d.svg`);
+    } else if (iconElementAPI === "01n") {
+        document.querySelector("#icon").setAttribute("src", `./Images/Icons/01n.svg`);
+    } else if (iconElementAPI === "02n") {
+        document.querySelector("#icon").setAttribute("src", `./Images/Icons/02n.svg`);
+    } else if (iconElementAPI === "03n") {
+        document.querySelector("#icon").setAttribute("src", `./Images/Icons/03n.svg`);
+    } else if (iconElementAPI === "04n") {
+        document.querySelector("#icon").setAttribute("src", `./Images/Icons/04n.svg`);
+    } else if (iconElementAPI === "09n") {
+        document.querySelector("#icon").setAttribute("src", `./Images/Icons/09n.svg`);
+    } else if (iconElementAPI === "10n") {
+        document.querySelector("#icon").setAttribute("src", `./Images/Icons/10n.svg`);
+    } else if (iconElementAPI === "11n") {
+        document.querySelector("#icon").setAttribute("src", `./Images/Icons/11n.svg`);
+    } else if (iconElementAPI === "13n") {
+        document.querySelector("#icon").setAttribute("src", `./Images/Icons/13n.svg`);
+    } else if (iconElementAPI === "50n") {
+        document.querySelector("#icon").setAttribute("src", `./Images/Icons/50n.svg`);
+    }
+
     document.querySelector("#icon").setAttribute("alt", response.data.weather[0].description);
 }
 
@@ -119,3 +158,49 @@ let tempC = null;
 
 let buttonF = document.querySelector("#fahrenheit-btn");
 buttonF.addEventListener("click", currentFTemp);
+
+
+
+// ------------------------------------------------------ //
+
+// let iconElement = response.data.weather[0].icon;
+// document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${iconElement
+//     }@2x.png`);
+
+// if (iconElementAPI === "01d") {
+//     iconElement.setAttribute("src", `./Images/Icons/01d.svg`);
+// } else if (iconElementAPI === "02d") {
+//     iconElement.setAttribute("src", `./Images/Icons/02d.svg`);
+// } else if (iconElementAPI === "03d") {
+//     iconElement.setAttribute("src", `./Images/Icons/03d.svg`);
+// } else if (iconElementAPI === "04d") {
+//     iconElement.setAttribute("src", `./Images/Icons/04d.svg`);
+// } else if (iconElementAPI === "09d") {
+//     iconElement.setAttribute("src", `./Images/Icons/09d.svg`);
+// } else if (iconElementAPI === "10d") {
+//     iconElement.setAttribute("src", `./Images/Icons/10d.svg`);
+// } else if (iconElementAPI === "11d") {
+//     iconElement.setAttribute("src", `./Images/Icons/11d.svg`);
+// } else if (iconElementAPI === "13d") {
+//     iconElement.setAttribute("src", `./Images/Icons/13d.svg`);
+// } else if (iconElementAPI === "50d") {
+//     iconElement.setAttribute("src", `./Images/Icons/50d.svg`);
+// } else if (iconElementAPI === "01n") {
+//     iconElement.setAttribute("src", `./Images/Icons/01n.svg`);
+// } else if (iconElementAPI === "02n") {
+//     iconElement.setAttribute("src", `./Images/Icons/02n.svg`);
+// } else if (iconElementAPI === "03n") {
+//     iconElement.setAttribute("src", `./Images/Icons/03n.svg`);
+// } else if (iconElementAPI === "04n") {
+//     iconElement.setAttribute("src", `./Images/Icons/04n.svg`);
+// } else if (iconElementAPI === "09n") {
+//     iconElement.setAttribute("src", `./Images/Icons/09n.svg`);
+// } else if (iconElementAPI === "10n") {
+//     iconElement.setAttribute("src", `./Images/Icons/10n.svg`);
+// } else if (iconElementAPI === "11n") {
+//     iconElement.setAttribute("src", `./Images/Icons/11n.svg`);
+// } else if (iconElementAPI === "13n") {
+//     iconElement.setAttribute("src", `./Images/Icons/13n.svg`);
+// } else if (iconElementAPI === "50n") {
+//     iconElement.setAttribute("src", `./Images/Icons/50n.svg`);
+// }

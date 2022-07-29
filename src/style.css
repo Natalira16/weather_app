@@ -143,6 +143,11 @@ button:focus {
     margin: 30px 0 0 0;
 }
 
+#icon {
+    margin-right: 5px;
+    opacity: 0.4;
+}
+
 .card2-title {
     display: flex;
     flex-direction: row;
@@ -214,14 +219,18 @@ button:focus {
     padding: 0;
 }
 
-.item-header {
+.weather-forecast-date {
     font-size: 14px;
     font-weight: 700;
     color: rgba(0, 0, 0, 0.8);
     margin: 15px 0 10px 0;
 }
 
-.item-footer {
+.weather-forecast-temperature-min {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.weather-forecast-temperatures {
     font-size: 12px;
     font-weight: 700;
     color: rgba(0, 0, 0, 0.8);
