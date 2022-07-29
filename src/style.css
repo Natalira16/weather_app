@@ -21,8 +21,8 @@ a {
         display: block;
     }
 
-    .carousel-item {
-        margin-right: 30px;
+    .carousel-item:not(last-child) {
+        margin-right: 20px;
     }
 
     .carousel-item-hide {
