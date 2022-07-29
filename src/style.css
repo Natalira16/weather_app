@@ -21,11 +21,11 @@ a {
         display: block;
     }
 
-    .carousel-item:not(last-child) {
+    .weather-forecast:not(last-child) {
         margin-right: 20px;
     }
 
-    .carousel-item-hide {
+    .item-hide {
         display: none;
     }
 
@@ -62,7 +62,7 @@ a {
 }
 
 .form-control {
-    background-color: rgba(120, 120, 120, 0.1);
+    background-color: rgba(255, 255, 255, 0.6);
     border: 1px solid rgb(199, 199, 199);
     border-radius: 0.1rem;
     font-style: italic;
@@ -72,7 +72,7 @@ a {
 }
 
 .input-group ::placeholder {
-    color: #fff;
+    color: rgb(179, 179, 179);
 }
 
 button {
@@ -211,7 +211,7 @@ button:focus {
     margin: 30px 0 0 0;
 }
 
-.carousel-item {
+.weather-forecast {
     text-align: center;
     align-items: center;
     min-width: 97px;
@@ -241,7 +241,7 @@ button:focus {
     max-height: 33.333%;
 }
 
-.carousel-item1 {
+.item1 {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 0.25rem;
 }

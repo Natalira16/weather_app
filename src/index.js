@@ -24,6 +24,61 @@ let minutes = formatDate(date.getMinutes());
 h2.innerHTML = `${currentDay} ${hours}:${minutes}`;
 
 
+
+// ------------------------------------------------------ //
+
+function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    return days[day];
+}
+
+function displayForecast(response) {
+    let forecast = response.data.daily;
+
+    let forecastElement = document.querySelector("#forecast");
+
+    let forecastHTML = `<div class="row">`;
+    forecast.forEach(function (forecastDay, index) {
+        if (index < 6) {
+            forecastHTML =
+                forecastHTML +
+                `
+      <div class="col-2">
+        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+        <img
+          src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon
+                }@2x.png"
+          alt=""
+          width="42"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> ${Math.round(
+                    forecastDay.temp.max
+                )}° </span>
+          <span class="weather-forecast-temperature-min"> ${Math.round(
+                    forecastDay.temp.min
+                )}° </span>
+        </div>
+      </div>
+  `;
+        }
+    });
+
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+    console.log(coordinates);
+    let apiKey = "c9470fa529ce6770f386cc31e17d6a25";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
+}
+
+
 // ------------------------------------------------------ //
 
 function displayWeather(response) {
@@ -158,49 +213,3 @@ let tempC = null;
 
 let buttonF = document.querySelector("#fahrenheit-btn");
 buttonF.addEventListener("click", currentFTemp);
-
-
-
-// ------------------------------------------------------ //
-
-// let iconElement = response.data.weather[0].icon;
-// document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${iconElement
-//     }@2x.png`);
-
-// if (iconElementAPI === "01d") {
-//     iconElement.setAttribute("src", `./Images/Icons/01d.svg`);
-// } else if (iconElementAPI === "02d") {
-//     iconElement.setAttribute("src", `./Images/Icons/02d.svg`);
-// } else if (iconElementAPI === "03d") {
-//     iconElement.setAttribute("src", `./Images/Icons/03d.svg`);
-// } else if (iconElementAPI === "04d") {
-//     iconElement.setAttribute("src", `./Images/Icons/04d.svg`);
-// } else if (iconElementAPI === "09d") {
-//     iconElement.setAttribute("src", `./Images/Icons/09d.svg`);
-// } else if (iconElementAPI === "10d") {
-//     iconElement.setAttribute("src", `./Images/Icons/10d.svg`);
-// } else if (iconElementAPI === "11d") {
-//     iconElement.setAttribute("src", `./Images/Icons/11d.svg`);
-// } else if (iconElementAPI === "13d") {
-//     iconElement.setAttribute("src", `./Images/Icons/13d.svg`);
-// } else if (iconElementAPI === "50d") {
-//     iconElement.setAttribute("src", `./Images/Icons/50d.svg`);
-// } else if (iconElementAPI === "01n") {
-//     iconElement.setAttribute("src", `./Images/Icons/01n.svg`);
-// } else if (iconElementAPI === "02n") {
-//     iconElement.setAttribute("src", `./Images/Icons/02n.svg`);
-// } else if (iconElementAPI === "03n") {
-//     iconElement.setAttribute("src", `./Images/Icons/03n.svg`);
-// } else if (iconElementAPI === "04n") {
-//     iconElement.setAttribute("src", `./Images/Icons/04n.svg`);
-// } else if (iconElementAPI === "09n") {
-//     iconElement.setAttribute("src", `./Images/Icons/09n.svg`);
-// } else if (iconElementAPI === "10n") {
-//     iconElement.setAttribute("src", `./Images/Icons/10n.svg`);
-// } else if (iconElementAPI === "11n") {
-//     iconElement.setAttribute("src", `./Images/Icons/11n.svg`);
-// } else if (iconElementAPI === "13n") {
-//     iconElement.setAttribute("src", `./Images/Icons/13n.svg`);
-// } else if (iconElementAPI === "50n") {
-//     iconElement.setAttribute("src", `./Images/Icons/50n.svg`);
-// }
