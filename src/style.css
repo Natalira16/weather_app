@@ -12,6 +12,34 @@ a {
     margin: 0 auto;
 }
 
+@media (max-width: 540px) {
+    .content {
+        max-width: none;
+    }
+
+    .input-group {
+        display: block;
+    }
+
+    .carousel-item {
+        margin-right: 30px;
+    }
+
+    .carousel-item-hide {
+        display: none;
+    }
+
+    .card1-title {
+        font-size: 28px;
+        margin: 20px 0 0 0;
+    }
+
+    .text-title {
+        font-size: 28px;
+    }
+}
+
+
 .container {
     height: 50%;
     margin: 0 auto;
@@ -40,7 +68,7 @@ a {
     font-style: italic;
     margin-right: 5px;
     padding: 7px;
-    width: 65%;
+    width: 55%;
 }
 
 .input-group ::placeholder {
@@ -168,22 +196,20 @@ button:focus {
 }
 
 .carousel {
-    margin-right: 226px;
     max-height: 100%;
 }
 
 .carousel-items {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
-    margin: 50px 0 0 0;
-    min-width: 500px;
+    margin: 30px 0 0 0;
 }
 
 .carousel-item {
     text-align: center;
     align-items: center;
-    width: 97px;
+    min-width: 97px;
     height: 140px;
     padding: 0;
 }
