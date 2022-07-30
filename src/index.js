@@ -53,7 +53,7 @@ function displayForecast(response) {
                 forecastHTML +
                 `<div class="col-2">
                     <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-                    <img src="${iconElement}" alt="" id="" class="forecast-icon" width="60px">
+                    <img src="http://openweathermap.org/img/wn/${iconElement}@2x.png" alt="" class="forecast-icon" width="60px">
                     <div class="weather-forecast-temperatures">
                         <span class="weather-forecast-temperature-max" id="maxTemp"> ${maxTemp}° </span>
                         <span class="weather-forecast-temperature-min" id="minTemp"> ${minTemp}° </span>
@@ -62,9 +62,7 @@ function displayForecast(response) {
         }
 
 
-        // let iconElement = forecastDay.weather[0].icon;
-        iconElement = document.querySelector('#forecast img');
-        // iconElement.setAttribute('id', 'forecast-icon');
+        // iconElement = forecastDay.weather[0].icon;
 
         if (iconElement === "01d") {
             document.querySelector('#forecast img').setAttribute("src", `./Images/Icons/01d.svg`);
@@ -135,7 +133,6 @@ function displayWeather(response) {
     document.querySelector("#description").innerHTML = response.data.weather[0].main;
 
     let iconElementAPI = response.data.weather[0].icon;
-    // document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${iconElementAPI}@2x.png`);
 
     if (iconElementAPI === "01d") {
         document.querySelector("#icon").setAttribute("src", `./Images/Icons/01d.svg`);

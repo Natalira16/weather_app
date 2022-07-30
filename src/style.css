@@ -18,14 +18,19 @@ a:focus {
 .content {
     max-width: 600px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    margin: 10px auto 0;
+    justify-content: center;
+    margin: 10% auto 0;
 }
 
-@media (max-width: 540px) {
+@media (max-width: 580px) {
     .content {
         max-width: none;
+        margin: 10% 10px 0;
+    }
+
+    .container {
+        padding: 10px 15px;
     }
 
     .weather-forecast:not(last-child) {
