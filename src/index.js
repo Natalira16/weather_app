@@ -35,6 +35,9 @@ function formatDay(timestamp) {
     return days[day];
 }
 
+
+// ------------------------------------------------------ //
+
 function displayForecast(response) {
     let forecast = response.data.daily;
 
@@ -42,7 +45,6 @@ function displayForecast(response) {
 
     let forecastHTML = `<div class="row">`;
     forecast.forEach(function (forecastDay, index) {
-
         let maxTemp = Math.round(forecastDay.temp.max);
         let minTemp = Math.round(forecastDay.temp.min);
 
@@ -53,60 +55,21 @@ function displayForecast(response) {
                 forecastHTML +
                 `<div class="col-2">
                     <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-                    <img src="http://openweathermap.org/img/wn/${iconElement}@2x.png" alt="" class="forecast-icon" width="60px">
+                    <img src="./Images/Icons/${iconElement}.svg" alt="" class="forecast-icon" width="60px">
                     <div class="weather-forecast-temperatures">
                         <span class="weather-forecast-temperature-max" id="maxTemp"> ${maxTemp}° </span>
                         <span class="weather-forecast-temperature-min" id="minTemp"> ${minTemp}° </span>
                     </div>
                 </div>`;
         }
-
-
-        // iconElement = forecastDay.weather[0].icon;
-
-        if (iconElement === "01d") {
-            document.querySelector('#forecast img').setAttribute("src", `./Images/Icons/01d.svg`);
-        } else if (iconElement === "02d") {
-            document.querySelector('#forecast img').setAttribute("src", `./Images/Icons/02d.svg`);
-        } else if (iconElement === "03d") {
-            document.querySelector('#forecast img').setAttribute("src", `./Images/Icons/03d.svg`);
-        } else if (iconElement === "04d") {
-            document.querySelector('#forecast img').setAttribute("src", `./Images/Icons/04d.svg`);
-        } else if (iconElement === "09d") {
-            document.querySelector('#forecast img').setAttribute("src", `./Images/Icons/09d.svg`);
-        } else if (iconElement === "10d") {
-            document.querySelector('#forecast img').setAttribute("src", `./Images/Icons/10d.svg`);
-        } else if (iconElement === "11d") {
-            document.querySelector('#forecast img').setAttribute("src", `./Images/Icons/11d.svg`);
-        } else if (iconElement === "13d") {
-            document.querySelector('#forecast img').setAttribute("src", `./Images/Icons/13d.svg`);
-        } else if (iconElement === "50d") {
-            document.querySelector('#forecast img').setAttribute("src", `./Images/Icons/50d.svg`);
-        } else if (iconElement === "01n") {
-            document.querySelector('#forecast img').setAttribute("src", `./Images/Icons/01n.svg`);
-        } else if (iconElement === "02n") {
-            document.querySelector('#forecast img').setAttribute("src", `./Images/Icons/02n.svg`);
-        } else if (iconElement === "03n") {
-            document.querySelector('#forecast img').setAttribute("src", `./Images/Icons/03n.svg`);
-        } else if (iconElement === "04n") {
-            document.querySelector('#forecast img').setAttribute("src", `./Images/Icons/04n.svg`);
-        } else if (iconElement === "09n") {
-            document.querySelector('#forecast img').setAttribute("src", `./Images/Icons/09n.svg`);
-        } else if (iconElement === "10n") {
-            document.querySelector('#forecast img').setAttribute("src", `./Images/Icons/10n.svg`);
-        } else if (iconElement === "11n") {
-            document.querySelector('#forecast img').setAttribute("src", `./Images/Icons/11n.svg`);
-        } else if (iconElement === "13n") {
-            document.querySelector('#forecast img').setAttribute("src", `./Images/Icons/13n.svg`);
-        } else if (iconElement === "50n") {
-            document.querySelector('#forecast img').setAttribute("src", `./Images/Icons/50n.svg`);
-        }
-
     });
 
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
 }
+
+
+// ------------------------------------------------------ //
 
 function getForecast(coordinates) {
     console.log(coordinates);

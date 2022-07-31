@@ -90,12 +90,15 @@ a:focus {
 button {
     text-decoration: none;
     border: none;
+    outline: none;
 }
 
 button:hover,
 button:focus {
     cursor: pointer;
     transition: all 200ms ease-in-out;
+    border: none;
+    outline: none;
 }
 
 .btn-search {
@@ -158,7 +161,11 @@ button:focus {
 
 #icon {
     margin-right: 5px;
-    opacity: 0.4;
+    opacity: 0.6;
+}
+
+.forecast-icon {
+    opacity: 0.6;
 }
 
 .card2-title {
