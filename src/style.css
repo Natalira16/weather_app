@@ -1,12 +1,13 @@
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     background-image: url(https://images.unsplash.com/photo-1529511582893-2d7e684dd128?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2833&q=80);
-    background-position: 0 0;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
+    height: 100vh;
 }
 
 a:hover,
@@ -33,21 +34,18 @@ a:focus {
         padding: 10px 15px;
     }
 
-    .weather-forecast:not(last-child) {
-        margin-right: 20px;
+    .hide:not(last-child) {
+        margin-right: 10px;
     }
 
-    .hide {
+    .hide:last-child {
         display: none;
     }
 
-    .card1-title {
+    h1,
+    h3 {
         font-size: 28px;
-        margin: 20px 0 0 0;
-    }
-
-    .text-title {
-        font-size: 28px;
+        /* margin: 20px 0 0 0; */
     }
 }
 
@@ -55,10 +53,10 @@ a:focus {
 .container {
     height: 50%;
     margin: 0 auto 5px;
-    padding: 20px 30px;
+    padding: 30px;
     background-color: rgba(212, 235, 255, 0.5);
     border: 1px solid rgb(199, 199, 199);
-    border-radius: 0.25rem;
+    border-radius: 10px;
 }
 
 .header {
@@ -77,6 +75,7 @@ a:focus {
     background-color: rgba(255, 255, 255, 0.6);
     border: 1px solid rgb(199, 199, 199);
     border-radius: 0.1rem;
+    font-family: 'Poppins', sans-serif;
     font-style: italic;
     margin-right: 5px;
     padding: 7px;
@@ -135,8 +134,9 @@ button:focus {
 
 .card1-title {
     font-size: 36px;
+    font-weight: 500;
     color: rgb(22, 81, 171);
-    margin: 30px 0 0 0;
+    margin: 30px 0 5px 0;
 }
 
 .card1-items {
@@ -175,7 +175,7 @@ button:focus {
 
 .text-title {
     font-size: 36px;
-    font-weight: 700;
+    font-weight: 500;
     color: rgb(22, 81, 171);
     margin: 0 5px 0 0;
 }
@@ -188,7 +188,7 @@ button:focus {
 
 .unitC {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 500;
     color: rgba(98, 97, 97, 0.8);
 }
 
@@ -204,7 +204,7 @@ button:focus {
 
 .unitF {
     font-size: 14px;
-    font-weight: 100;
+    font-weight: 500;
     color: rgba(98, 97, 97, 0.8);
 }
 
@@ -231,13 +231,29 @@ button:focus {
     margin: 30px 0 0 0;
 }
 
-.weather-forecast {
+.weather-forecast,
+.row {
     text-align: center;
     align-items: center;
+    justify-content: center;
     min-width: 97px;
     height: 140px;
     padding: 0;
 }
+
+.col-2 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-2:first-child {
+    background-color: rgba(115, 115, 115, 0.3);
+    border-radius: 0.25rem;
+}
+
 
 .weather-forecast-date {
     font-size: 14px;
@@ -251,24 +267,25 @@ button:focus {
 }
 
 .weather-forecast-temperatures {
+    display: flex;
     font-size: 12px;
     font-weight: 700;
     color: rgba(0, 0, 0, 0.7);
     margin: 10px 0 15px 0;
 }
 
-.item-icon {
-    max-height: 33.333%;
+.weather-forecast-temperature-max {
+    margin-right: 3px;
 }
 
-.item1 {
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 0.25rem;
+.item-icon {
+    max-height: 33.333%;
 }
 
 .open-source {
     font-size: 12px;
     color: rgba(255, 255, 255, 0.8);
+    margin: 0;
 }
 
 .open-source-link {

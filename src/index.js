@@ -53,7 +53,7 @@ function displayForecast(response) {
         if (index < 6) {
             forecastHTML =
                 forecastHTML +
-                `<div class="col-2">
+                `<div class="col-2 hide">
                     <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
                     <img src="./Images/Icons/${iconElement}.svg" alt="" class="forecast-icon" width="60px">
                     <div class="weather-forecast-temperatures">
@@ -66,7 +66,9 @@ function displayForecast(response) {
 
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
+
 }
+
 
 
 // ------------------------------------------------------ //
