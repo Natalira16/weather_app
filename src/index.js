@@ -71,6 +71,11 @@ function displayForecast(response) {
 
 // ------------------------------------------------------ //
 
+
+
+
+// ------------------------------------------------------ //
+
 function getForecast(coordinates) {
     console.log(coordinates);
     let apiKey = "c9470fa529ce6770f386cc31e17d6a25";
@@ -149,6 +154,9 @@ function searchCity(city) {
 function handleSubmit(event) {
     event.preventDefault();
     let city = document.querySelector("#form-control").value;
+    if (city.length <= 0) {
+        alert(`Oops, looks like there is no city name... Please, type the city name again 🏙`);
+    };
     searchCity(city);
 }
 

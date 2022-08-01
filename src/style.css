@@ -319,4 +319,8 @@ button:focus {
     .btn-current {
         font-size: 12px;
     }
+
+    .row {
+        margin-left: -5px;
+    }
 }
