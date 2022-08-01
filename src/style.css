@@ -24,32 +24,6 @@ a:focus {
     margin: 10% auto 0;
 }
 
-@media (max-width: 580px) {
-    .content {
-        max-width: none;
-        margin: 10% 10px 0;
-    }
-
-    .container {
-        padding: 10px 15px;
-    }
-
-    .hide:not(last-child) {
-        margin-right: 10px;
-    }
-
-    .hide:last-child {
-        display: none;
-    }
-
-    h1,
-    h3 {
-        font-size: 28px;
-        /* margin: 20px 0 0 0; */
-    }
-}
-
-
 .container {
     height: 50%;
     margin: 0 auto 5px;
@@ -298,4 +272,51 @@ button:focus {
     text-decoration: none;
     cursor: pointer;
     color: rgba(15, 66, 121, 0.8);
+}
+
+
+@media (max-width: 580px) {
+    .content {
+        max-width: none;
+        margin: 10% 10px 0;
+    }
+
+    .container {
+        padding: 10px 15px;
+    }
+
+    .hide:not(last-child) {
+        margin-right: 10px;
+    }
+
+    .hide:last-child {
+        display: none;
+    }
+
+    .card1-title,
+    .text-title {
+        font-size: 28px;
+    }
+
+    .weather-forecast-date {
+        font-size: 12px;
+    }
+
+    .weather-forecast-temperatures {
+        font-size: 10px;
+    }
+
+    .forecast-icon {
+        width: 40px;
+    }
+
+    #icon {
+        width: 70px;
+    }
+
+    .form-control,
+    .btn-search,
+    .btn-current {
+        font-size: 12px;
+    }
 }

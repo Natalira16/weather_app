@@ -24,7 +24,6 @@ let minutes = formatDate(date.getMinutes());
 h2.innerHTML = `${currentDay} ${hours}:${minutes}`;
 
 
-
 // ------------------------------------------------------ //
 
 function formatDay(timestamp) {
@@ -68,7 +67,6 @@ function displayForecast(response) {
     forecastElement.innerHTML = forecastHTML;
 
 }
-
 
 
 // ------------------------------------------------------ //
