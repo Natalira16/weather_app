@@ -213,3 +213,78 @@ let tempC = null;
 
 let buttonF = document.querySelector("#fahrenheit-btn");
 buttonF.addEventListener("click", currentFTemp);
+
+
+
+// ------------------------------------------------------ //
+
+function doQuickSearchBerlin(event) {
+    event.preventDefault();
+    let quickSearchBtn = document.querySelector("#quick-search_berlin");
+    let h1 = document.querySelector("h1");
+    h1.innerHTML = `${quickSearchBtn.innerHTML}`;
+    let searchInput = document.querySelector(".form-control");
+    searchInput.value = `${quickSearchBtn.innerHTML}`;
+    searchInput.value = searchInput.value.trim();
+    let apiKey = "c9470fa529ce6770f386cc31e17d6a25";
+    let city = searchInput.value.trim();
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayWeather);
+}
+
+let quickSearchBerlin = document.querySelector("#quick-search_berlin");
+quickSearchBerlin.addEventListener("click", doQuickSearchBerlin);
+
+
+function doQuickSearchParis(event) {
+    event.preventDefault();
+    let quickSearchBtn = document.querySelector("#quick-search_paris");
+    let h1 = document.querySelector("h1");
+    h1.innerHTML = `${quickSearchBtn.innerHTML}`;
+    let searchInput = document.querySelector(".form-control");
+    searchInput.value = `${quickSearchBtn.innerHTML}`;
+    searchInput.value = searchInput.value.trim();
+    let apiKey = "c9470fa529ce6770f386cc31e17d6a25";
+    let city = searchInput.value.trim();
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayWeather);
+}
+
+let quickSearchParis = document.querySelector("#quick-search_paris");
+quickSearchParis.addEventListener("click", doQuickSearchParis);
+
+
+function doQuickSearchNewYork(event) {
+    event.preventDefault();
+    let quickSearchBtn = document.querySelector("#quick-search_newyork");
+    let h1 = document.querySelector("h1");
+    h1.innerHTML = `${quickSearchBtn.innerHTML}`;
+    let searchInput = document.querySelector(".form-control");
+    searchInput.value = `${quickSearchBtn.innerHTML}`;
+    searchInput.value = searchInput.value.trim();
+    let apiKey = "c9470fa529ce6770f386cc31e17d6a25";
+    let city = searchInput.value.trim();
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayWeather);
+}
+
+let quickSearchNewYork = document.querySelector("#quick-search_newyork");
+quickSearchNewYork.addEventListener("click", doQuickSearchNewYork);
+
+
+function doQuickSearchSydney(event) {
+    event.preventDefault();
+    let quickSearchBtn = document.querySelector("#quick-search_sydney");
+    let h1 = document.querySelector("h1");
+    h1.innerHTML = `${quickSearchBtn.innerHTML}`;
+    let searchInput = document.querySelector(".form-control");
+    searchInput.value = `${quickSearchBtn.innerHTML}`;
+    searchInput.value = searchInput.value.trim();
+    let apiKey = "c9470fa529ce6770f386cc31e17d6a25";
+    let city = searchInput.value.trim();
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayWeather);
+}
+
+let quickSearchSydney = document.querySelector("#quick-search_sydney");
+quickSearchSydney.addEventListener("click", doQuickSearchSydney);
