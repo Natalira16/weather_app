@@ -69,10 +69,6 @@ function displayForecast(response) {
 }
 
 
-// ------------------------------------------------------ //
-
-
-
 
 // ------------------------------------------------------ //
 
@@ -84,6 +80,7 @@ function getForecast(coordinates) {
 }
 
 
+
 // ------------------------------------------------------ //
 
 function displayWeather(response) {
@@ -91,7 +88,7 @@ function displayWeather(response) {
 
     tempC = response.data.main.temp;
 
-    document.querySelector("h1").innerHTML = response.data.name;
+    document.querySelector("h1").innerHTML = (response.data.name) + ", " + (response.data.sys.country);
     document.querySelector("h3").innerHTML = temperature;
 
     document.querySelector("#feels_like").innerHTML = Math.round(response.data.main.feels_like);
