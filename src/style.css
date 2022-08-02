@@ -101,7 +101,6 @@ button:focus {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* max-width: 500px; */
     margin: 0 0 20px 0;
     padding: 0;
 }
