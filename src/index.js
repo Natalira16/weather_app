@@ -69,7 +69,6 @@ function displayForecast(response) {
 }
 
 
-
 // ------------------------------------------------------ //
 
 function getForecast(coordinates) {
@@ -77,6 +76,34 @@ function getForecast(coordinates) {
     let apiKey = "c9470fa529ce6770f386cc31e17d6a25";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayForecast);
+}
+
+
+
+// ------------------------------------------------------ //
+
+function forecastFTemp(response) {
+    let forecast = response.data.daily;
+
+    forecast.forEach(function (forecastDay, index) {
+        let forecastMaxTemp = Math.round(forecastDay.temp.max);
+        document.querySelector("#maxTemp").innerHTML = forecastMaxTemp;
+
+        let forecastMinTemp = Math.round(forecastDay.temp.min);
+        document.querySelector("#minTemp").innerHTML = forecastMinTemp;
+    });
+    getforecastFTemp(response);
+}
+
+let btnF = document.querySelector("#fahrenheit-btn");
+btnF.addEventListener("click", forecastFTemp);
+
+
+function getForecastF(coordinates) {
+    console.log(coordinates);
+    let apiKey = "c9470fa529ce6770f386cc31e17d6a25";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(forecastFTemp);
 }
 
 
